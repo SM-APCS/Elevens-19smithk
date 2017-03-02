@@ -23,3 +23,93 @@ You would need the ranks array for "King" " Ace" "Queen" kinda stuff to set the 
 4. Does the order of elements of the ranks, suits, and pointValues arrays matter?
 
 Yes because the ranks suits and pointValues create the cards that make up the deck. 
+
+
+ACTIVITY 3 
+
+This is the Flip class for question 2:
+
+public class...
+
+public class Activity3Methods {
+
+	public static void main(String[] args)
+  {
+		
+		int[] firstArray = {1,2,5,0,3};
+		int[] secondArray = {2,3,5,1,0};
+		System.out.println(arePermutations(firstArray,secondArray));
+		/*System.out.println(flip());
+		System.out.println(flip());
+		System.out.println(flip());
+		System.out.println(flip());*/
+	}
+	
+	public static String flip(){
+		int random = (int) (Math.random()*(2));
+		
+		if(random == 1 || random == 2)
+    {
+			return "heads";
+		}
+		else
+    {
+			return "tails";
+		}
+		
+	}
+	
+	
+	public static boolean arePermutations(int[] one, int[]two)
+  {
+		int i = 0;
+		boolean returnThis = true;
+		while(i < one.length)
+    {
+			
+			int numbInOne = one[i];
+			if(arrayContains(numbInOne,two))
+      {
+				
+			}
+			else
+      {
+				returnThis = false;
+				break;
+			}
+			i++;
+		}
+		
+		return returnThis;
+	}
+	
+	public static boolean arrayContains(int number, int[] intArray){
+		int matches = 0;
+		for (int k = 0; k < intArray.length; k++)
+    {
+			if(number == intArray[k]
+    ){
+				matches++;
+			}
+		}
+		
+		if(matches > 0){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+}
+
+3. Suppose that the initial contents of the values array in Shuffler.java are {1, 2, 3, 4}. For what sequence of random integers would the efficient selection shuffle change values to contain {4, 3, 2, 1}?
+The random sequence would be 3,2,1,0
+
+
+
+
+
+
+
+
